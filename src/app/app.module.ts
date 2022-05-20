@@ -15,6 +15,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatGridListModule} from '@angular/material/grid-list';
 
 import { DishService } from './services/dish.service';
+import { PromotionService } from './services/promotion.service';
 
 
 import { MenuComponent } from './menu/menu.component';
@@ -48,7 +49,8 @@ import { DishdetailComponent } from './dishdetail/dishdetail.component';
     MatButtonModule
   ],
   providers: [
-    DishService
+    DishService,
+    PromotionService
   ],
   bootstrap: [AppComponent]
 })
