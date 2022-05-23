@@ -5,26 +5,22 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card'
 import {MatButtonModule} from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
-
-import { AppRoutingModule } from './app-routing/app-routing.module';
-import { AppComponent } from './app.component';
-
-import 'hammerjs';
-
 import {MatListModule} from '@angular/material/list';
 import {MatGridListModule} from '@angular/material/grid-list';
 
+import { AppRoutingModule } from './app-routing/app-routing.module';
+import { AppComponent } from './app.component';
 import { DishService } from './services/dish.service';
-import { PromotionService } from './services/promotion.service';
+import { LeaderService } from './services/leader.service';
 
-
+import 'hammerjs';
 import { MenuComponent } from './menu/menu.component';
+import { DishdetailComponent } from './dishdetail/dishdetail.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
-import { DishdetailComponent } from './dishdetail/dishdetail.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +38,7 @@ import { DishdetailComponent } from './dishdetail/dishdetail.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
+    AppRoutingModule,
     MatToolbarModule,
     MatListModule,
     MatGridListModule,
@@ -50,7 +47,7 @@ import { DishdetailComponent } from './dishdetail/dishdetail.component';
   ],
   providers: [
     DishService,
-    PromotionService
+    LeaderService
   ],
   bootstrap: [AppComponent]
 })
