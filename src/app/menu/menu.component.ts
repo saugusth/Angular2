@@ -22,7 +22,8 @@ export class MenuComponent implements OnInit {
   constructor(private disshService: DishService) { }
 
   ngOnInit(): void {
-    this.dishes = this.disshService.getDishes();
+    this.disshService.getDishes()
+    .then((dishes)=>{this.dishes = dishes});
   }
 
 }
