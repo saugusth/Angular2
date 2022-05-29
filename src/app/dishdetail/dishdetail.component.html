@@ -33,5 +33,7 @@
         <p>-- {{comments.author}} {{comments.date | date}}</p>
     </mat-list>
   </div>
-
+  <div FxFlex [hidden]="dish">
+    <mat-spinner></mat-spinner><h4>Loading . . . Please Wait!</h4>
+  </div>
 </div>
