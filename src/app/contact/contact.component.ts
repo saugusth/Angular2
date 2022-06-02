@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup, Validator, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Feedback, ContactType } from '../shared/feedback';
 @Component({
   selector: 'app-contact',
@@ -14,10 +14,10 @@ export class ContactComponent implements OnInit {
   @ViewChild('fform') feedbackFormDirective;
 
   formErrors = {
-    'firstname': '',
-    'lastname': '',
+    'firstname' : '',
+    'lastname' : '',
     'telnum': '',
-    'email': ''
+    'email' : ''
   };
 
   validationMessages = {
@@ -59,24 +59,24 @@ export class ContactComponent implements OnInit {
       message: ''
     })
 
-    this.feedbackForm.valueChanges
-      .subscribe(data => this.onValueChanged(data));
-    
+    this.feedbackForm.valueChanges.subscribe(data => this.onValueChanged(data))
+
     this.onValueChanged();
   }
 
-  onValueChanged(data?: any){
-    if (!this.feedbackForm){return;}
+  onValueChanged(data?: any) {
+    if (!this.feedbackForm) { return; }
     const form = this.feedbackForm;
-    for (const field in this.formErrors){
-      if(this.formErrors.hasOwnProperty(field)){
+    for (const field in this.formErrors) {
+      if (this.formErrors.hasOwnProperty(field)) {
+        // clear previous error message (if any)
         this.formErrors[field] = '';
         const control = form.get(field);
-        if (control && control.dirty && !control.valid){
+        if (control && control.dirty && !control.valid) {
           const messages = this.validationMessages[field];
-          for (const key in control.errors){
-            if(control.errors.hasOwnProperty(key)){
-              this.formErrors[field] += messages[key] + ' '
+          for (const key in control.errors) {
+            if (control.errors.hasOwnProperty(key)) {
+              this.formErrors[field] += messages[key] + ' ';
             }
           }
         }
